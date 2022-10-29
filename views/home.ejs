@@ -1,0 +1,116 @@
+
+<%- include('partials/header', {profileUrl: linkProfile}) -%>
+
+
+<!-- Main Area -->
+
+<div class="container-fluid" onload="setImages()">
+    <div class="row">
+      <div class="col-lg-7" id="post-side"> <!--Posts Side-->
+        <div class="container-fluid margin-area post-margin">
+
+          <% userData.reverse().forEach(function(post, index) {%>
+          <!--Random posts-->
+          <div class="container-fluid post-content border">
+            <div class="row header">
+              <div class="post-header">
+                <div class="user">
+                  <a class="user-profile" href="/profile/<%= post.username %>">
+                    <img class="user-icon" src="/public/images/user.png" alt="" oncontextmenu="return false;">
+                    <p class="user-name-display"><%= post.postAuthor%></p>
+                  </a>
+                </div>
+                <div class="menu dropdown">
+                  <span class="material-symbols-outlined more dropdown-toggle" data-bs-toggle="dropdown">
+                    more_vert
+                    </span>
+                    <ul class="dropdown-menu">
+                      <li><a href="" class="dropdown-item">Report</a></li>
+                      <li><a href="" class="dropdown-item">Donate</a></li>
+                      <li><a href="" class="dropdown-item">Commission</a></li>
+                    </ul>
+                </div>
+              </div>
+              <div class="col-12">
+                <p><%= post.post_text %></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 post-content-img-cont">
+                <div class="image img<%= post.id %>" content="<%= post.resizedImageContent %>" imageId="<%= post.id %>"></div>
+              </div>
+              <div class="col-lg-12">
+                <div class="numberIndicator">
+                  <p class="<%= post.id %>" ><%= post.like_count %>  </p><p>Like</p>
+                  <p class="commentCount" identifier="<%= post.id %>"><%= post.comment_count %>  </p><p>Comment</p>
+                </div>
+              </div>
+              <div class="col-6 post-button">
+                <a class="like-button <%= post.id %>button" likedBy="<%= post.likedBy %>" 
+                  length="<%= post.likedBy.length %>"
+                  liked="<%= linkProfile.id %>" 
+                  postId="<%= post.id %>" onclick="liked('<%= post.id %>')"> 
+                  <i class="bi bi-circle-fill"></i>
+                    Like
+                </a> 
+              </div>
+              <div class="col-6 post-button comment-button">
+                <a class="comment comment-button">
+                  <i class="bi bi-justify-left"></i>
+                  Comment
+                </a>
+              </div>
+            </div>
+          </div>
+        <%}); %>
+          <!--Random posts-->
+
+        </div>
+      </div>
+      <div class="col-lg-5" id="feature-side"> <!--Feature Side-->
+        <div class="container-fluid margin-area border-start">
+          <div id="carouselExampleIndicators" class="carousel slide feature-container" data-bs-ride="true"> <!--Carousel-->
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="test" id="image-carou"></div>
+              </div>
+              <div class="carousel-item">
+                <div class="test">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="test"></div>
+              </div>
+              <div class="carousel-item">
+                <div class="test"></div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div><!--Carousel-->
+          <div class="featured-artists">
+            <h3>Featured</h3>
+            <div class="artists">
+              <img src="/public/images/user.png" alt="">
+              <img src="/public/images/user.png" alt="">
+              <img src="/public/images/user.png" alt="">
+              <img src="/public/images/user.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<%- include('partials/footer') -%>

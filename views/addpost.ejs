@@ -1,0 +1,21 @@
+<%- include('partials/header', {profileUrl: linkProfile}) -%>
+
+<div class="container-fluid add-post-container">
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <h4 class="card-title"><%= linkProfile.username %></h4>
+            <p class="card-subtitle text-muted">
+                Create Post
+            </p>
+            <form action="/addpost" method="POST" enctype="multipart/form-data">
+                <input class="file-upload" type="file" name="uploaded_file" id="image" accept="image/*">
+                <textarea class="form-control add_text_content" name="post_text_content" id="" cols="5" rows="5" placeholder="Enter post caption here!"></textarea>
+                <button class="btn btn-success post_button" type="submit">Post</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') -%>

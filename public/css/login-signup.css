@@ -1,0 +1,64 @@
+.row {
+    margin: 10px;
+    align-items: center;
+}
+
+.card {
+    padding: 20px;
+    border: 0;
+}
+
+.card img {
+    width: 200px;
+    margin: auto;
+}
+
+.form-control {
+    width: 70%;
+    margin: 10px auto 10px auto;
+}
+
+.eye-candy-display img {
+    width: 100%;
+}
+
+.eye-candy {
+    margin-bottom: 0;
+}
+
+.btn {
+  width: 73%;
+  margin: auto;
+}
+
+button:hover {
+  border: 1px solid #198754!important;
+}
+
+.btn-custom {
+  background-color: #198754;
+  color: #FFF;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  .login-clickables a {
+    color: #999999;
+  }

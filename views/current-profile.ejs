@@ -1,0 +1,68 @@
+<%- include('partials/header', {profileUrl: linkProfile}) -%>
+  
+
+<div class="container">
+  <main>
+    <div class="row profile-details border-bottom">
+      <div class="col-2">
+        <div class="profile">
+          <img src="/public/images/user.png" alt="">
+        </div>
+      </div>
+      <div class="col-10">
+        <section class="details">
+            <div class="upper">
+              <% userInfo.forEach(function(user){ %>
+                <h2><%= user.name %> </h2>
+              <% }); %> 
+            </div>
+            <div class="mid">
+                <h5>Post</h5>
+                <h5>Followers</h5>
+                <div class="low-detail">
+                    <p>Profile Viewer</p>
+                </div>
+            </div>
+            <div class="low">
+                <div class="profile-buttons">
+                    <!-- <div class="btn btn-success">Follow</div>
+                    <div class="btn btn-success">Become a member</div> -->
+                    <a class="btn btn-success" href="/addpost">Add Post</a>
+                    <a class="btn btn-success" href="/editprofile">Edit Profile</a>
+                </div>
+            </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <div class="col">
+          <div class="welcome-message-container"><% userInfo.forEach(function(message){ %>
+            <pre><span><%= message.profile_message %></span></pre>
+            <% }); %></div>
+        </div>
+        <div class="col">
+          <div class="commission-tab"><% userInfo.forEach(function(message){ %>
+            <pre><span><%= message.commission_details %></span></pre>
+            <% }); %></div>
+        </div>
+      </div>
+      <div class="col-md-7 col-lg-8">
+        <div class="row">
+          <% userContent.forEach(function(content) { %> 
+          <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6">
+            <div class="profile-img-container">
+              <div class="image-profile" content="<%= content.imageContent %>"></div>
+            </div>
+          </div>
+          
+            <% }); %> 
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+<%- include('partials/footer') -%> 

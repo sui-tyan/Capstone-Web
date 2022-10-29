@@ -1,0 +1,55 @@
+<%- include('partials/ls_header') -%> 
+
+
+
+<div class="container-fluid">
+    <div class="row eye-candy">
+        <div class="col-lg-8">
+
+            <div class="row eye-candy">
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <img src="/public/images/placeholder1.jpeg" alt="" class="w-100 shadow-1-strong rounded mb-4">
+                    <img src="/public/images/placeholder2.jpeg" alt="" class="w-100 shadow-1-strong rounded mb-4">
+                    <img src="/public/images/placeholder3.jpeg" alt="" class="w-100 shadow-1-strong rounded mb-4">
+                </div>
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <img src="/public/images/placeholder3.jpeg" alt="" class="w-100 shadow-1-strong rounded mb-4">
+                    <img src="/public/images/placeholder2.jpeg" alt="" class="w-100 shadow-1-strong rounded mb-4">
+                    <img src="/public/images/placeholder1.jpeg" alt="" class="w-100 shadow-1-strong rounded mb-4">
+                </div>
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <img src="/public/images/placeholder1.jpeg" alt="" class="w-100 shadow-1-strong rounded mb-4">
+                    <img src="/public/images/placeholder2.jpeg" alt="" class="w-100 shadow-1-strong rounded mb-4">
+                    <img src="/public/images/placeholder3.jpeg" alt="" class="w-100 shadow-1-strong rounded mb-4">
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-lg-4">
+            <div class="row vertical-center">
+                <div class="card text-center">
+                    <img src="/public/images/Pintas_LogoScaled.png" alt="">
+                    <div class="card-body">
+                        <form action="/signup" method="POST">
+                            <input class="form-control" type="email" name="username" id="" placeholder="Email">
+                            <input class="form-control" type="password" name="password" id="" placeholder="Password">
+                            <input class="form-control" type="text" name="name" id="" placeholder="Username">
+                            <div class="row">
+                                <button type="submit" class="btn btn-outline-success">Sign Up</button>
+                            </div>
+                            <div class="row login-clickables">
+                                <a href="/login">Already have an account?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<%- include('partials/ls_footer') -%> 
